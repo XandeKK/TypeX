@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmp71y2qih1k5"]
+
+[ext_resource type="Script" path="res://src/UI/Body/GlobalStyles/Scripts/justify_container.gd" id="1_gwa4b"]
+[ext_resource type="PackedScene" uid="uid://2cftnam31qlk" path="res://src/UI/Components/input.tscn" id="2_7dgcr"]
+
+[node name="JustifyContainer" type="VBoxContainer"]
+script = ExtResource("1_gwa4b")
+
+[node name="JustifyButton" type="Button" parent="."]
+layout_mode = 2
+text = "KEY_JUSTIFY"
+
+[node name="ToleranceInput" parent="." instance=ExtResource("2_7dgcr")]
+layout_mode = 2
+type = 2
+name_label = "KEY_TOLERANCE"
+reset = false
+
+[connection signal="pressed" from="JustifyButton" to="." method="_on_justify_button_pressed"]
+[connection signal="changed" from="ToleranceInput" to="." method="_on_tolerance_input_changed"]

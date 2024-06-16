@@ -8,11 +8,13 @@ class_name Text
 @onready var gradient : GradientText
 
 var text_path : TextPath2D
+var text_layout_manager : TextLayoutManager
 
 func _ready():
 	text_renderer.text = self
 	outline_manager.text = self
 	text_styles.text = self
+	text_layout_manager = TextLayoutManager.new(self)
 
 func active_motion_blur(value : bool) -> void:
 	if value:

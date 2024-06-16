@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cup1vbnn124g5"]
+[gd_scene load_steps=12 format=3 uid="uid://cup1vbnn124g5"]
 
 [ext_resource type="Script" path="res://src/UI/Body/Scripts/global_styles_docker.gd" id="1_06ncl"]
 [ext_resource type="PackedScene" uid="uid://sjcihdv8ggt4" path="res://src/UI/Components/tab.tscn" id="2_xvxh8"]
@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dq40ndffxhokl" path="res://src/UI/Body/GlobalStyles/gradient_container.tscn" id="7_8vgse"]
 [ext_resource type="PackedScene" uid="uid://gb37yfjyshkt" path="res://src/UI/Body/GlobalStyles/mask_container.tscn" id="8_cwtoj"]
 [ext_resource type="PackedScene" uid="uid://dqa40gey6genb" path="res://src/UI/Body/GlobalStyles/path_container.tscn" id="9_1cfok"]
+[ext_resource type="PackedScene" uid="uid://bmp71y2qih1k5" path="res://src/UI/Body/GlobalStyles/justify_container.tscn" id="10_w5a6v"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1btmp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b472"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -50,51 +51,57 @@ layout_mode = 2
 
 [node name="Outline" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" node_paths=PackedStringArray("content") instance=ExtResource("2_xvxh8")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1btmp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5b472")
 content = NodePath("../../../../MarginContainer2/OutlinesContainer")
 theme_type = "TabStyle"
 
 [node name="MotionBlur" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" node_paths=PackedStringArray("content") instance=ExtResource("2_xvxh8")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1btmp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5b472")
 content = NodePath("../../../../MarginContainer2/MotionBlurContainer")
 theme_type = "TabStyle"
 
 [node name="Blur" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" node_paths=PackedStringArray("content") instance=ExtResource("2_xvxh8")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1btmp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5b472")
 content = NodePath("../../../../MarginContainer2/BlurContainer")
 theme_type = "TabStyle"
 
 [node name="Perspective" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" node_paths=PackedStringArray("content") instance=ExtResource("2_xvxh8")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1btmp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5b472")
 content = NodePath("../../../../MarginContainer2/PerspectiveContainer")
 theme_type = "TabStyle"
 
 [node name="Gradient" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" node_paths=PackedStringArray("content") instance=ExtResource("2_xvxh8")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1btmp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5b472")
 content = NodePath("../../../../MarginContainer2/GradientContainer")
 theme_type = "TabStyle"
 
 [node name="Mask" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" node_paths=PackedStringArray("content") instance=ExtResource("2_xvxh8")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1btmp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5b472")
 content = NodePath("../../../../MarginContainer2/MaskContainer")
 theme_type = "TabStyle"
 
 [node name="Pattern" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" node_paths=PackedStringArray("content") instance=ExtResource("2_xvxh8")]
 visible = false
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1btmp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5b472")
 content = NodePath("../../../../MarginContainer2/MaskContainer")
 theme_type = "TabStyle"
 
 [node name="Path" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" node_paths=PackedStringArray("content") instance=ExtResource("2_xvxh8")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1btmp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5b472")
 content = NodePath("../../../../MarginContainer2/PathContainer")
+theme_type = "TabStyle"
+
+[node name="Justify" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" node_paths=PackedStringArray("content") instance=ExtResource("2_xvxh8")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5b472")
+content = NodePath("../../../../MarginContainer2/JustifyContainer")
 theme_type = "TabStyle"
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
@@ -131,5 +138,9 @@ visible = false
 layout_mode = 2
 
 [node name="PathContainer" parent="VBoxContainer/MarginContainer2" instance=ExtResource("9_1cfok")]
+visible = false
+layout_mode = 2
+
+[node name="JustifyContainer" parent="VBoxContainer/MarginContainer2" instance=ExtResource("10_w5a6v")]
 visible = false
 layout_mode = 2
